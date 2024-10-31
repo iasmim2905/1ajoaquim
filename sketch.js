@@ -1,55 +1,53 @@
-// fantasia, aventura, drama
+//cremes para cabelo
+   
+//creme skala,3,morango 2 em 1
+//salon line,0 a 3,definição 
+//pantene,8,máscara restauradora
+//seda boom, +4,super hidratação
+//belissé,+12,liso efeito
 
-// a viagem de chihiro, LIVRE, fantasia, aventura
-// paddington, LIVRE, fantasia, aventura
-// as aventuras de pi, 10, drama, fantasia, aventura
-// depois da chuva, 10, drama
-// Tinker Bell, 16, fantasia, aventura
-// O Filho Protegido, 12, drama
-// fala serio mãe,14 , drama 
-//idade >= 10
 
- let campoIdade;
+let campoIdade;
 let campoFantasia;
 
 function setup() {
   createCanvas(800, 400);
-  createElement("h2", "Recomendador de filmes");
+  createElement("h2", "cremes para cabelo");
   createSpan("Sua idade:");
-  campoIdade = createInput("18");
-  campoFantasia = createCheckbox("Gosta de drama?");
+  campoIdade = createInput("5");
+  campoFantasia = createCheckbox ("Gosta de cremes?");
+
+  
 }
 
-
 function draw() {
-    background("rgb(223,18,18)");
+    background("#E4CAE9");
     let idade = campoIdade.value();
     let gostaDeFantasia = campoFantasia.checked();
     let recomendacao = geraRecomendacao(idade, gostaDeFantasia);
 
-    fill(color(12, 0, 15));
+    fill(color(15, 6, 15));
     textAlign(CENTER, CENTER);
     textSize(38);
     text(recomendacao, width / 2, height / 2);
-}
 
-function geraRecomendacao(idade, gostaDeFantasia) {
+}
+  function geraRecomendacao(idade, gostaDeFantasia) {
     if (idade >= 10) {
         if (idade >= 14) {
-            return "O Filho Protegido";
+            return "creme sksla";
         } else {
             if (gostaDeFantasia) {
-                return "fala serio mãe";
+                return "salon line";
             } else {
-                return "Tinker Bell";
+                return "pantene";
             }
         }
     } else {
         if (gostaDeFantasia) {
-            return "A viagem de chihiro";
+            return "seda boom";
         } else {
-            return "O feitiço do tempo";
+            return "belissé";
         }
     }
 }
-
